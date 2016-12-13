@@ -10,7 +10,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="mobile-web-app-capable" content="yes">
     <title>
-        SpreadQL - Cheatsheet - HackMD
+        SpreadQL - HackMD
     </title>
     <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
     <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
@@ -35,24 +35,16 @@
 </head>
 
 <body>
-
-<a target="_new" href="https://github.com/MKoen/SpreadQL/" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
-
-
-    <div id="doc" class="markdown-body container-fluid">
-        <h1 id="spreadql-cheatsheet"><a class="anchor hidden-xs" href="#spreadql-cheatsheet" title="spreadql-cheatsheet"><span class="octicon octicon-link"></span></a>SpreadQL - Cheatsheet</h1><p>A lightweight spreadsheet SQL-ish library.</p><p>SpreadQL is a library that creates an interface between the Google Apps Script and the Spreadsheet communication layer. It makes talking to a Google Spreadsheet more pleasant and easy for developers.</p><h2 id="configurating-spreadql"><a class="anchor hidden-xs" href="#configurating-spreadql" title="configurating-spreadql"><span class="octicon octicon-link"></span></a>Configurating SpreadQL</h2><pre><code class="javascript hljs"><span class="hljs-keyword">var</span> sheetConfiguration = [{
-    <span class="hljs-attr">sheetName</span>: sheetName,
-    <span class="hljs-attr">startColumn</span>: column,
-    <span class="hljs-attr">startRow</span>: row
-}];
-
-<span class="hljs-comment">/**
+    <div id="doc" class="markdown-body container-fluid"><p><img src="https://i.imgur.com/oYz5qhe.png" alt="" title="SpreadQL. A lightweight spreadseet SQL-ish library." width="300" height="120"></p><hr><h1 id="spreadql0"><a class="anchor hidden-xs" href="#spreadql" title="spreadql"><span class="octicon octicon-link"></span></a>SpreadQL</h1><p>A lightweight spreadsheet SQL-ish library.</p><p>SpreadQL is a library that creates an interface between the Google Apps Script and the Spreadsheet communication layer. It makes talking to a Google Spreadsheet more pleasant and easy for developers.</p><h2 id="how-to-install"><a class="anchor hidden-xs" href="#how-to-install" title="how-to-install"><span class="octicon octicon-link"></span></a>How to install</h2><p>You can easily import SpreadQL by going to Resources &gt; Libraries. Then just use our key (MWbnTNG1K7a7dfZDiJbpememrDAFfAv3a) to find it. Then just click “Select” and chose the latest version. Now just click “Save” and you’re done.</p><h2 id="configurating-spreadql"><a class="anchor hidden-xs" href="#configurating-spreadql" title="configurating-spreadql"><span class="octicon octicon-link"></span></a>Configurating SpreadQL</h2><p>Before you can address data, you first need to configure it so SpreadQL knows what you’re asking. It’s pretty easy actually, you just pass it an array of objects referring to your sheets and where the tables start. Et voilà, done!</p><pre><code class="javascript hljs"><span class="hljs-comment">/**
  * Configures the main spreadcollection of a spreadsheet
  * @param {object[]} sheetConfigurations - The name and starting column and row from the spreadsheets you want to use.
+ * @param {object[]} sheetConfigurations.sheetName - The name of the sheet you want to use.
+ * @param {string} sheetConfigurations.startColumn = A - The starting column of the table on given sheet.
+ * @param {number} sheetConfigurations.startRow=1 - The name and starting column and row from the spreadsheets you want to use.
  * @returns {SpreadCollection}
  */</span>
 SpreadQL.config(sheetConfiguration);
-</code></pre><h2 id="reading-data"><a class="anchor hidden-xs" href="#reading-data" title="reading-data"><span class="octicon octicon-link"></span></a>Reading Data</h2><pre><code class="javascript hljs"><span class="hljs-comment">//Instance of SpreadCollection gotten from SpreadQL.config</span>
+</code></pre><h2 id="reading-data"><a class="anchor hidden-xs" href="#reading-data" title="reading-data"><span class="octicon octicon-link"></span></a>Reading Data</h2><p>This is the most used - and most important - part of SpreadQL, the ability to read data from your spreadsheet like it’s a fully working database.</p><p>So first of all, you use the <code>from</code> function to select which sheet to get the data from. After this, you can use a number of optional functions (<code>orderBy</code> , <code>find</code> <code>join</code> and <code>distinct</code>) to to customise the result. All these functions will return an object of class <code>SpreadCollection</code>.</p><p>After you choose what to read, you can use the <code>select</code> function. This to convert the <code>SpreadCollection</code> to a fully native JavaScript array of objects with the properties of the columns you selected using this function.</p><p>Here is the JSDoc for reading data using SpreadQL:</p><pre><code class="javascript hljs"><span class="hljs-comment">//Instance of SpreadCollection returned from SpreadQL.config</span>
 spreadCollection
 
 <span class="hljs-comment">/**
@@ -66,10 +58,10 @@ spreadCollection
 <span class="hljs-comment">/**
  * Optionally choose which columns to order data by
  * @param {string[]} columnNames - The names of the columns to order by
- * @param {SpreadQl.Order=SpreadQL.Order.ASC} - The way to order
+ * @param {SpreadQl.Order=SpreadQL.Order.ASC} [order] - The way to order
  * @returns {SpreadCollection}
  */</span>
-.orderBy(columnNames, SpreadQL.Order)
+.orderBy(columnNames, order)
 
 <span class="hljs-comment">/**
  * Optionally filter data from SpreadCollection
@@ -79,14 +71,33 @@ spreadCollection
 .find(criteria)
 
 <span class="hljs-comment">/**
+ * Optionally join data from another spreadcollection
+ * @param {string} columnName - The column to base the join upon
+ * @param {string} otherColumnName - The column of another sheet of the same spreadsheet to join with. "sheetName.ColumnName" syntax is required.
+ * @returns {SpreadCollection}
+ */</span>
+.join(columnName, otherColumnName)
+
+<span class="hljs-comment">/**
+ * Optionally remove duplicate data
+ * If no columns are given, all columns are checked for duplicates
+ * @param {string[]} [columnNames] - The columns to check for duplicates
+ * @returns {SpreadCollection}
+ */</span>
+.distinct(columnNames)
+
+
+<span class="hljs-comment">/**
  * Convert SpreadCollection to object
  * If no columnNames are given, all columns are included in object
- * @param {string[]} columnNames - The column names to be included in object
+ * @param {string[]} [columnNames] - The column names to be included in object
  * @returns {object}
  */</span>
 .select(columnNames);
-</code></pre><hr><h2 id="inserting-data"><a class="anchor hidden-xs" href="#inserting-data" title="inserting-data"><span class="octicon octicon-link"></span></a>Inserting Data</h2><pre><code class="javascript hljs"><span class="hljs-comment">//Instance of SpreadCollection gotten from SpreadQL.config</span>
+</code></pre><h2 id="inserting-data"><a class="anchor hidden-xs" href="#inserting-data" title="inserting-data"><span class="octicon octicon-link"></span></a>Inserting Data</h2><p>If you want to insert something in a table using your script, SpreadQL is the library for you! Just call the <code>insert</code> function on your instance of <code>SpreadCollection</code> and pass the name of the sheet and the data you want to insert on it.</p><pre><code class="javascript hljs"><span class="hljs-comment">//Instance of SpreadCollection returned from SpreadQL.config</span>
 spreadCollection
+
+Here is the JSDoc <span class="hljs-keyword">for</span> inserting data using SpreadQL:
 
 <span class="hljs-comment">/**
  * Insert data in given spreadsheet
@@ -95,7 +106,7 @@ spreadCollection
  * @returns {SpreadCollection}
  */</span>
 .insert(sheetName, data);
-</code></pre><hr><h2 id="updating-data"><a class="anchor hidden-xs" href="#updating-data" title="updating-data"><span class="octicon octicon-link"></span></a>Updating Data</h2><pre><code class="javascript hljs"><span class="hljs-comment">//Instance of SpreadCollection gotten from SpreadQL.config</span>
+</code></pre><h2 id="updating-data"><a class="anchor hidden-xs" href="#updating-data" title="updating-data"><span class="octicon octicon-link"></span></a>Updating Data</h2><p>Updating the data in your sheets is also possible using SpreadQL. Just chose a sheet and select which rows to update and pass the values to update it with.</p><p>Here is the JSDoc for updating data using SpreadQL:</p><pre><code class="javascript hljs"><span class="hljs-comment">//Instance of SpreadCollection returned from SpreadQL.config</span>
 spreadCollection
 
 <span class="hljs-comment">/**
@@ -107,12 +118,12 @@ spreadCollection
 
 <span class="hljs-comment">/**
  * Update data in given spreadsheet
- * @param {object} criteria - The rows to be updated
+ * @param {object} properties - The rows to be updated
  * @param {object} data - The new data for the given rows
  * @returns {SpreadCollection}
  */</span>
-.update(sheetName, data);
-</code></pre><hr><h2 id="removing-data"><a class="anchor hidden-xs" href="#removing-data" title="removing-data"><span class="octicon octicon-link"></span></a>Removing Data</h2><pre><code class="javascript hljs"><span class="hljs-comment">//Instance of SpreadCollection gotten from SpreadQL.config</span>
+.update(properties, newValues);
+</code></pre><h2 id="removing-data"><a class="anchor hidden-xs" href="#removing-data" title="removing-data"><span class="octicon octicon-link"></span></a>Removing Data</h2><p>Since SpreadQL has a fully working CRUD functionality, you can also remove data. This is almost the same as update, but you just use the <code>update</code> function</p><p>Here is the JSDoc for removing data using SpreadQL:</p><pre><code class="javascript hljs"><span class="hljs-comment">//Instance of SpreadCollection returned from SpreadQL.config</span>
 spreadCollection
 
 <span class="hljs-comment">/**
@@ -128,26 +139,46 @@ spreadCollection
  * @returns {SpreadCollection}
  */</span>
 .remove(criteria);
-</code></pre><p><sup></sup></p><center>SpreadQL - A lightweight spreadsheet SQL-ish library - © 2016 - SpreadQL Team </center><p></p></div>
+</code></pre><h2 id="exporting-data"><a class="anchor hidden-xs" href="#exporting-data" title="exporting-data"><span class="octicon octicon-link"></span></a>Exporting Data</h2><p>A special feature in SpreadQL is that you can export your selected data to a new sheet in the existing spreadsheet.</p><p>This has the same syntax as reading data, except that you use the <code>export</code> functions instead of the <code>select</code> function.</p><p>Here is the JSDoc for exporting data using SpreadQL:</p><pre><code class="javascript hljs"><span class="hljs-comment">//Instance of SpreadCollection returned from SpreadQL.config</span>
+spreadCollection
+
+<span class="hljs-comment">//This includes the full syntax of reading data, but without the select function.</span>
+
+<span class="hljs-comment">/**
+ * Export SpreadCollection to a new spreadsheet.
+ * If no columnNames are given, all columns are exported
+ * @param {fileName} fileName - The name of the new spreadsheet that will be generated
+ * @param {string[]} [columnNames] - The column names to be included in the new spreadsheet
+ * @returns {undefined}
+ */</span>
+.export(fileName, columnNames);
+</code></pre><hr><h2 id="full-list-of-available-functions"><a class="anchor hidden-xs" href="#full-list-of-available-functions" title="full-list-of-available-functions"><span class="octicon octicon-link"></span></a>Full list of available functions</h2><h3 id="spreadql0"><a class="anchor hidden-xs" href="#spreadql" title="spreadql"><span class="octicon octicon-link"></span></a>SpreadQL</h3><ul>
+<li><code>config</code></li>
+</ul><h3 id="spreadcollection"><a class="anchor hidden-xs" href="#spreadcollection" title="spreadcollection"><span class="octicon octicon-link"></span></a>SpreadCollection</h3><ul>
+<li><code>insert</code></li>
+<li><code>from</code></li>
+<li><code>orderBy</code></li>
+<li><code>find</code></li>
+<li><code>join</code></li>
+<li><code>distinct</code></li>
+<li><code>select</code></li>
+<li><code>export</code></li>
+<li><code>update</code></li>
+<li><code>remove</code></li>
+</ul><p><sup></sup></p><center>© 2016 - SpreadQL Team </center><p></p></div>
     <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
         <div class="pull-right dropdown">
             <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
                 <i class="fa fa-bars"></i>
             </a>
             <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
-                <div class="toc"><ul class="nav"><li class=""><a href="#spreadql-cheatsheet">SpreadQL - Cheatsheet</a><ul class="nav"><li><a href="#configurating-spreadql">Configurating SpreadQL</a></li><li><a href="#reading-data">Reading Data</a></li><li><a href="#inserting-data">Inserting Data</a></li><li><a href="#updating-data">Updating Data</a></li><li><a href="#removing-data">Removing Data</a></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+                <div class="toc"><ul class="nav"><li class=""><a href="#spreadql0">SpreadQL</a><ul class="nav"><li><a href="#how-to-install">How to install</a></li><li><a href="#configurating-spreadql">Configurating SpreadQL</a></li><li><a href="#reading-data">Reading Data</a></li><li><a href="#inserting-data">Inserting Data</a></li><li><a href="#updating-data">Updating Data</a></li><li><a href="#removing-data">Removing Data</a></li><li class=""><a href="#exporting-data">Exporting Data</a></li><li class=""><a href="#full-list-of-available-functions">Full list of available functions</a><ul class="nav"><li class=""><a href="#spreadql0">SpreadQL</a></li><li><a href="#spreadcollection">SpreadCollection</a></li></ul></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
             </ul>
         </div>
     </div>
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;"  >
-        <!-- Place this tag where you want the button to render. -->
-        <div class="toc"><ul class="nav"><li class=""><a href="#spreadql-cheatsheet">SpreadQL - Cheatsheet</a><ul class="nav"><li><a href="#configurating-spreadql">Configurating SpreadQL</a></li><li><a href="#reading-data">Reading Data</a></li><li><a href="#inserting-data">Inserting Data</a></li><li><a href="#updating-data">Updating Data</a></li><li><a href="#removing-data">Removing Data</a></li></ul></li></ul>
-        </div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a>
-        </div>
-        <hr/>
-        <i>Star us on GitHub!</i><br/>
-        <a class="github-button" href="https://github.com/MKoen/SpreadQL" data-icon="octicon-star" data-style="mega" data-count-href="/MKoen/SpreadQL/stargazers" data-count-api="/repos/MKoen/SpreadQL#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star MKoen/SpreadQL on GitHub">Star</a>
-        </div>
+        <div class="toc"><ul class="nav"><li class=""><a href="#spreadql0">SpreadQL</a><ul class="nav"><li><a href="#how-to-install">How to install</a></li><li><a href="#configurating-spreadql">Configurating SpreadQL</a></li><li><a href="#reading-data">Reading Data</a></li><li class=""><a href="#inserting-data">Inserting Data</a></li><li class=""><a href="#updating-data">Updating Data</a></li><li class=""><a href="#removing-data">Removing Data</a></li><li class=""><a href="#exporting-data">Exporting Data</a></li><li><a href="#full-list-of-available-functions">Full list of available functions</a><ul class="nav"><li><a href="#spreadql0">SpreadQL</a></li><li><a href="#spreadcollection">SpreadCollection</a></li></ul></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
@@ -271,7 +302,6 @@ spreadCollection
             }, 100, "linear");
         }
     </script>
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
 </body>
 
 </html>
