@@ -10,7 +10,7 @@ SpreadQL is a library that creates an interface between the Google Apps Script a
 ## How to install
 You can easily import SpreadQL by going to Resources > Libraries. Then just use our key (MWbnTNG1K7a7dfZDiJbpememrDAFfAv3a) to find it. Then just click "Select" and chose the latest version. Now just click "Save" and you're done.
 
-## Configurating SpreadQL
+## Configuring SpreadQL
 Before you can address data, you first need to configure it so SpreadQL knows what you're asking. It's pretty easy actually, you just pass it an array of objects referring to your sheets and where the tables start. Et voilà, done!
 
 ````javascript
