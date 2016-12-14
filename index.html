@@ -40,9 +40,9 @@
     <div id="doc" class="markdown-body container-fluid"><p><img src="https://i.imgur.com/oYz5qhe.png" alt="" title="SpreadQL. A lightweight spreadseet SQL-ish library." width="300" height="120"></p><hr><h1 id="spreadql0"><a class="anchor hidden-xs" href="#spreadql" title="spreadql"><span class="octicon octicon-link"></span></a>SpreadQL</h1><p>A lightweight spreadsheet SQL-ish library.</p><p>SpreadQL is a library that creates an interface between the Google Apps Script and the Spreadsheet communication layer. It makes talking to a Google Spreadsheet more pleasant and easy for developers.</p><h2 id="how-to-install"><a class="anchor hidden-xs" href="#how-to-install" title="how-to-install"><span class="octicon octicon-link"></span></a>How to install</h2><p>You can easily import SpreadQL by going to Resources &gt; Libraries. Then just use our key (MWbnTNG1K7a7dfZDiJbpememrDAFfAv3a) to find it. Then just click “Select” and chose the latest version. Now just click “Save” and you’re done.</p><h2 id="configurating-spreadql"><a class="anchor hidden-xs" href="#configurating-spreadql" title="configurating-spreadql"><span class="octicon octicon-link"></span></a>Configurating SpreadQL</h2><p>Before you can address data, you first need to configure it so SpreadQL knows what you’re asking. It’s pretty easy actually, you just pass it an array of objects referring to your sheets and where the tables start. Et voilà, done!</p><pre><code class="javascript hljs"><span class="hljs-comment">/**
  * Configures the main spreadcollection of a spreadsheet
  * @param {object[]} sheetConfigurations - The name and starting column and row from the spreadsheets you want to use.
- * @param {object[]} sheetConfigurations.sheetName - The name of the sheet you want to use.
+ * @param {string} sheetConfigurations.sheetName - The name of the sheet you want to use.
  * @param {string} sheetConfigurations.startColumn = A - The starting column of the table on given sheet.
- * @param {number} sheetConfigurations.startRow=1 - The name and starting column and row from the spreadsheets you want to use.
+ * @param {number} sheetConfigurations.startRow = 1 - The name and starting column and row from the spreadsheets you want to use.
  * @returns {SpreadCollection}
  */</span>
 SpreadQL.config(sheetConfiguration);
