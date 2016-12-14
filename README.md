@@ -17,9 +17,9 @@ Before you can address data, you first need to configure it so SpreadQL knows wh
 /**
  * Configures the main spreadcollection of a spreadsheet
  * @param {object[]} sheetConfigurations - The name and starting column and row from the spreadsheets you want to use.
- * @param {object[]} sheetConfigurations.sheetName - The name of the sheet you want to use.
+ * @param {string} sheetConfigurations.sheetName - The name of the sheet you want to use.
  * @param {string} sheetConfigurations.startColumn = A - The starting column of the table on given sheet.
- * @param {number} sheetConfigurations.startRow=1 - The name and starting column and row from the spreadsheets you want to use.
+ * @param {number} sheetConfigurations.startRow = 1 - The name and starting column and row from the spreadsheets you want to use.
  * @returns {SpreadCollection}
  */
 SpreadQL.config(sheetConfiguration);
