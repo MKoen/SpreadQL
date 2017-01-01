@@ -91,12 +91,11 @@ spreadCollection
 
 ## Inserting Data
 If you want to insert something in a table using your script, SpreadQL is the library for you! Just call the ````insert```` function on your instance of ````SpreadCollection```` and pass the name of the sheet and the data you want to insert on it.
+Here is the JSDoc for inserting data using SpreadQL:
 
 ````javascript
 //Instance of SpreadCollection returned from SpreadQL.config
 spreadCollection
-
-Here is the JSDoc for inserting data using SpreadQL:
 
 /**
  * Insert data in given spreadsheet
