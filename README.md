@@ -186,6 +186,7 @@ spreadCollection
 ## Full list of available functions
 ### SpreadQL
 - ````config````
+
 ### SpreadCollection
 - ````insert````
 - ````from````
