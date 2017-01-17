@@ -204,4 +204,4 @@ spreadCollection
 - ````update````
 - ````remove````
 
-<sup><center>© 2016 - SpreadQL Team </center></sup>
+<sup><center>© 2017 - SpreadQL Team </center></sup>
