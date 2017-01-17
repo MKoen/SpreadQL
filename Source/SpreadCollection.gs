@@ -200,7 +200,7 @@ SpreadCollection.prototype = (function () {
       },
 
       orderBy = function (criteria, spreadQLOrder) {
-        var spreadQLOrder = spreadQLOrder !== undefined ? spreadQLOrder : Order.ASC; //var can be removed, and isn't (typeof spreadQLOrder !== "undefined") cleaner?
+        spreadQLOrder = (typeof spreadQLOrder !== "undefined") ? spreadQLOrder : Order.ASC;
 
         this.data = this.data.sort(function(a,b) {
           for(var i = 0, l = criteria.length; i < l; i++) {
