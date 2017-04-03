@@ -2,7 +2,7 @@
 The SpreadQL source code has now been committed and can be explored by anyone interested!
 More features and functionality is coming in the future.
 
-![SpreadQL. A lightweight spreadseet SQL-ish library.](https://i.imgur.com/oYz5qhe.png "SpreadQL. A lightweight spreadseet SQL-ish library." =300x120)
+![SpreadQL - A lightweight spreadsheet SQL-ish library](https://i.imgur.com/oYz5qhe.png)
 
 ---
 
