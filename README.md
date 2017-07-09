@@ -200,4 +200,7 @@ spreadCollection
 - ````update````
 - ````remove````
 
+## License
+GPL-3.0
+
 <sup><center>© 2017 - SpreadQL Team </center></sup>
